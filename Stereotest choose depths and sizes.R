@@ -22,17 +22,18 @@ depth_difference = seq(-3,3,0.1)
 #15 (m) is the depth of the rectangle in relation to the observer
 #2 (m) is the offset of the stimulus to the left or right from the straight-ahead
 #0.065 (m) is the generic assumed interocular distance
-
 disparity_test = 180 - ((90 - RadiansToDegree(atan(2.065/(15+depth_difference)))) + (90 + RadiansToDegree(atan(1.935/(15+depth_difference)))))
-#here we compute the disparity elicited by the comparison rectangle:
+
+#here we compute the disparity elicited by the reference rectangle:
 disparity_zero = 180 - ((90 - RadiansToDegree(atan(2.065/15))) + (90 + RadiansToDegree(atan(1.935/15))))
+
 #here we convert it into arcsec:
 (disparity_test-disparity_zero)*3600
 
 DF = data.frame(Disparity = (disparity_test-disparity_zero)*3600,
                 DepthDifference = depth_difference)
 
-#here we plot the difference in disparity in function of the difference in depth between test and comparison rectangle: 
+#here we plot the difference in disparity in function of the difference in depth between test and reference rectangle: 
 ggplot(DF, aes(DepthDifference, Disparity)) +
   geom_point()
 

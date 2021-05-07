@@ -13,4 +13,7 @@ It should be enough for a crude assessment though.
 In this version we only tested 200 arcsec, since we only needed a very crude measure that participants weren't full-on stereoblind. 
 It includes 20 2AFC trials ("Does left or right seem closer?") and participants had to get at least 16 right to pass our test.
 
-The PDF explains the geometry behind the experiment and the R script implements it.
+The PDF explains the geometry behind the experiment.
+
+The R script implements the maths on how to choose relative depths to obtain the desired disparity, as well as the maths 
+on how to adapt the size of the test rectangle such that it occupies the same visual angle as the reference rectangle at 15m
